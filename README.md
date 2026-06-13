@@ -189,7 +189,6 @@ HeapNode{"cara",  2}
 PathResult {
     path: ["cara", "sigma", "rizz"], // Ou via aura, ambos têm custo mínimo 2.0
     totalWeight: 2,                  // Soma dos pesos originais das arestas percorridas
-    totalCost: 2.0,                  // Custo inverso acumulado
     found: true
 }
 ```
