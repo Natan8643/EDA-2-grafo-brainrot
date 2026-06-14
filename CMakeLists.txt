@@ -109,6 +109,7 @@ add_custom_target(run_project
 brainrot_add_runner(run_parser     brainrot_parser     tests/parser/CorpusManagerTest.cpp)
 brainrot_add_runner(run_nlp        brainrot_nlp        tests/nlp/SpacyProcessorTest.cpp)
 brainrot_add_runner(run_graph      brainrot_graph      tests/graph/GraphTest.cpp)
+brainrot_add_runner(run_graph_builder brainrot_graph tests/graph/GraphBuilderTest.cpp)#added
 brainrot_add_runner(run_algorithms brainrot_algorithms tests/algorithms/BFSTest.cpp)
 brainrot_add_runner(run_structures brainrot_structures tests/structures/MaxHeapTest.cpp)
 brainrot_add_runner(run_analysis   brainrot_analysis   tests/analysis/ReportGeneratorTest.cpp)

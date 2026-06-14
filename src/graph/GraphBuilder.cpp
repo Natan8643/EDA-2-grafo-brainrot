@@ -1,5 +1,6 @@
 #include "graph/GraphBuilder.hpp"
 #include <algorithm>
+#include <iostream>
 #include <unordered_set>
 
 std::string GraphBuilder::makeEdgeKey(const std::string &wordA,
@@ -35,6 +36,10 @@ void GraphBuilder::addDocument(const std::vector<Token> &tokens) {
       std::string key = makeEdgeKey(words[i], words[j]);
       edgeCounter[key]++; // seria como mapa["aura|ego"]++
     }
+  }
+
+  for (size_t i = 0; i < words.size(); i++) {
+    std::cout << words[i] << std::endl;
   }
 }
 
