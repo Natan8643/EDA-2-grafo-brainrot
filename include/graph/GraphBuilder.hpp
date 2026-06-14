@@ -54,23 +54,22 @@ Obs
 // em 3 documentos diferentes.
 #pragma once
 
-#include <vector>
-#include <unordered_map>
 #include "../nlp/Token.hpp"
 #include "Graph.hpp"
+#include <unordered_map>
+#include <vector>
 
-class GraphBuilder
-{
+class GraphBuilder {
 private:
-    std::unordered_map<std::string, int> edgeCounter;
+  std::unordered_map<std::string, int> edgeCounter;
 
-    std::string makeEdgeKey(
-        const std::string &wordA, const std::string &wordB) const;
+  std::string makeEdgeKey(const std::string &wordA,
+                          const std::string &wordB) const;
 
 public:
-    void addDocument(const std::vector<Token> &tokens);
+  void addDocument(const std::vector<Token> &tokens);
 
-    Graph build();
+  Graph build();
 };
 
 /*
@@ -81,7 +80,8 @@ class GraphBuilder
 private:
     std::unordered_map<std::string, int> edgeCounter;
 
-    std::string makeEdgeKey(const std::string& wordA, const std::string& wordB) const
+    std::string makeEdgeKey(const std::string& wordA, const std::string& wordB)
+const
     {
         if (wordA < wordB) {
             return wordA + "|" + wordB;
@@ -100,8 +100,8 @@ public:
             }
         }
 
-        std::vector<std::string> words(uniqueLemmas.begin(), uniqueLemmas.end());
-        std::sort(words.begin(), words.end());
+        std::vector<std::string> words(uniqueLemmas.begin(),
+uniqueLemmas.end()); std::sort(words.begin(), words.end());
 
         for (size_t i = 0; i < words.size(); ++i) {
             for (size_t j = i + 1; j < words.size(); ++j) {

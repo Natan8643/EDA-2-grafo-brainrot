@@ -1,7 +1,11 @@
 #include <iostream>
+#include <cassert>
+#include <algorithm>
+#include "graph/Graph.hpp"
 
 int main()
 {
-    std::cout << "Graph sandbox" << std::endl;
+
+    
     return 0;
 }

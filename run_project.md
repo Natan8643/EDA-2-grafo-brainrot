@@ -1,5 +1,12 @@
 ## Configuração Inicial (Gerar pasta de Build)
 
+Precisa do CMake e o compilador do c++ instalado:
+
+```
+sudo apt update
+sudo apt install cmake build-essential
+```
+
 CMake precisa mapear o seu sistema:
 
 Bash
