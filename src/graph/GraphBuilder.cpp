@@ -51,4 +51,5 @@ Graph GraphBuilder::build() {
     graph.addVertex(to);
     graph.addEdge(from, to, weight);
   }
+  return graph;
 }
