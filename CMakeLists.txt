@@ -9,6 +9,34 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 include(CTest)
 
+option(BRAINROT_ENABLE_SPACY "Enable spaCy C++ integration (spacy-cpp)" ON)
+set(BRAINROT_HAS_SPACY_CPP OFF)
+
+if(BRAINROT_ENABLE_SPACY)
+    include(FetchContent)
+    set(Python3_FIND_FRAMEWORK "LAST")
+    find_package(Python3 COMPONENTS Interpreter Development QUIET)
+
+    if(Python3_FOUND)
+        set(FETCHCONTENT_QUIET OFF)
+        FetchContent_Declare(
+            spacy_cpp
+            GIT_REPOSITORY https://github.com/d99kris/spacy-cpp.git
+            GIT_TAG v1.08
+        )
+        FetchContent_MakeAvailable(spacy_cpp)
+
+        if(TARGET spacy)
+            set(BRAINROT_HAS_SPACY_CPP ON)
+            message(STATUS "spacy-cpp enabled via target 'spacy'")
+        else()
+            message(WARNING "spacy-cpp repository fetched, but target 'spacy' not found. Falling back to non-spacy NLP path.")
+        endif()
+    else()
+        message(WARNING "Python3 (Interpreter + Development) not found. Falling back to non-spacy NLP path.")
+    endif()
+endif()
+
 set(BRAINROT_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
 set(BRAINROT_INCLUDE_SUBDIRS
     ${BRAINROT_INCLUDE_DIR}/algorithms
@@ -59,6 +87,13 @@ brainrot_add_library(brainrot_parser
 brainrot_add_library(brainrot_nlp
     src/nlp/SpacyProcessor.cpp
 )
+
+if(BRAINROT_HAS_SPACY_CPP)
+    target_link_libraries(brainrot_nlp PUBLIC spacy)
+    target_compile_definitions(brainrot_nlp PUBLIC BRAINROT_HAS_SPACY_CPP=1)
+else()
+    target_compile_definitions(brainrot_nlp PUBLIC BRAINROT_HAS_SPACY_CPP=0)
+endif()
 
 brainrot_add_library(brainrot_graph
     src/graph/Graph.cpp
