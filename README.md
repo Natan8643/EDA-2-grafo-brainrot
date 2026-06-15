@@ -71,6 +71,19 @@ Após processar `doc2.txt`:
 }
 ```
 
+### Dependência spacy-cpp (build)
+
+O projeto agora tenta integrar o wrapper `spacy-cpp` automaticamente via CMake (`FetchContent`), desde que Python3 (Interpreter + Development) esteja disponível.
+
+- Ativado por padrão: `BRAINROT_ENABLE_SPACY=ON`
+- Para desativar e usar fallback sem spaCy: `-DBRAINROT_ENABLE_SPACY=OFF`
+
+Exemplo de configuração:
+
+```bash
+cmake -S . -B build -DBRAINROT_ENABLE_SPACY=ON
+```
+
 ---
 
 ## Módulo 3: Graph (Construção da Rede)
