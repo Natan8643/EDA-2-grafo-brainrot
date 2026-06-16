@@ -34,6 +34,8 @@ Para compilar o seu código fonte e **executar direto** o seu arquivo de teste, 
 - **Módulo:** Graph **Arquivo para alterar/testar:** `tests/graph/GraphTest.cpp`
 - **Comando para rodar:** `cmake --build build --target run_graph`
 
+`cmake --build build --target run_graph_builder`
+
 - **Módulo:** Algorithms **Arquivo para alterar/testar:** `tests/algorithms/BFSTest.cpp`
 - **Comando para rodar:** `cmake --build build --target run_algorithms`
 

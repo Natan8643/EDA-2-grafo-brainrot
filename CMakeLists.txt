@@ -18,6 +18,52 @@ if(BRAINROT_ENABLE_SPACY)
     find_package(Python3 COMPONENTS Interpreter Development QUIET)
 
     if(Python3_FOUND)
+        # 1. Verifica e instala a biblioteca spaCy no Python
+        execute_process(
+            COMMAND ${Python3_EXECUTABLE} -c "import spacy"
+            RESULT_VARIABLE SPACY_CHECK_STATUS
+            OUTPUT_QUIET
+            ERROR_QUIET
+        )
+        if(NOT SPACY_CHECK_STATUS EQUAL 0)
+            message(STATUS "spaCy nao encontrado no Python. Tentando instalar via pip...")
+            execute_process(
+                COMMAND ${Python3_EXECUTABLE} -m pip install spacy
+                RESULT_VARIABLE PIP_STATUS
+            )
+            # Fallback caso precise de --break-system-packages (ex: ambientes Debian/Ubuntu recentes)
+            if(NOT PIP_STATUS EQUAL 0)
+                message(STATUS "Falha na instalacao comum. Tentando com --break-system-packages...")
+                execute_process(
+                    COMMAND ${Python3_EXECUTABLE} -m pip install spacy --break-system-packages
+                    RESULT_VARIABLE PIP_STATUS
+                )
+            endif()
+        endif()
+
+        # 2. Verifica e instala o modelo de Portugues (pt_core_news_sm)
+        execute_process(
+            COMMAND ${Python3_EXECUTABLE} -c "import spacy; spacy.load('pt_core_news_sm')"
+            RESULT_VARIABLE MODEL_CHECK_STATUS
+            OUTPUT_QUIET
+            ERROR_QUIET
+        )
+        if(NOT MODEL_CHECK_STATUS EQUAL 0)
+            message(STATUS "Modelo pt_core_news_sm do spaCy nao encontrado. Baixando...")
+            execute_process(
+                COMMAND ${Python3_EXECUTABLE} -m spacy download pt_core_news_sm
+                RESULT_VARIABLE MODEL_STATUS
+            )
+            # Fallback instalando diretamente do Github caso spacy download falhe
+            if(NOT MODEL_STATUS EQUAL 0)
+                message(STATUS "Falha no download via spacy. Tentando instalar modelo diretamente via pip...")
+                execute_process(
+                    COMMAND ${Python3_EXECUTABLE} -m pip install https://github.com/explosion/spacy-models/releases/download/pt_core_news_sm-3.7.0/pt_core_news_sm-3.7.0-py3-none-any.whl --break-system-packages
+                    RESULT_VARIABLE MODEL_STATUS
+                )
+            endif()
+        endif()
+
         set(FETCHCONTENT_QUIET OFF)
         FetchContent_Declare(
             spacy_cpp
