@@ -9,6 +9,8 @@ FileLoader.hpp tem a finalidade de ler um arquivo e devolver conteúdo em uma st
 #pragma once
 
 #include <string>
+#include <fstream>
+#include <sstream>
 
 class FileLoader
 {
