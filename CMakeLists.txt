@@ -156,6 +156,8 @@ brainrot_add_library(brainrot_algorithms
     src/algorithms/Dijkstra.cpp
 )
 
+target_link_libraries(brainrot_algorithms PUBLIC brainrot_graph)
+
 brainrot_add_library(brainrot_analysis
     src/analysis/ReportGenerator.cpp
 )
@@ -192,10 +194,11 @@ brainrot_add_runner(run_nlp        brainrot_nlp        tests/nlp/SpacyProcessorT
 brainrot_add_runner(run_graph      brainrot_graph      tests/graph/GraphTest.cpp)
 brainrot_add_runner(run_graph_builder brainrot_graph tests/graph/GraphBuilderTest.cpp)#added
 brainrot_add_runner(run_algorithms brainrot_algorithms tests/algorithms/BFSTest.cpp)
+brainrot_add_runner(run_dijkstra brainrot_algorithms tests/algorithms/DijkstraTest.cpp)
 brainrot_add_runner(run_structures brainrot_structures tests/structures/MaxHeapTest.cpp)
 brainrot_add_runner(run_analysis   brainrot_analysis   tests/analysis/ReportGeneratorTest.cpp)
 
 # Atalho para rodar todas as sandboxes e o projeto um atrás do outro
 add_custom_target(run_all
-    DEPENDS run_project run_parser run_nlp run_graph run_algorithms run_structures run_analysis
+    DEPENDS run_project run_parser run_nlp run_graph run_algorithms run_dijkstra run_structures run_analysis
 )
