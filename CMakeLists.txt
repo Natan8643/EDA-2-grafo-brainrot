@@ -171,12 +171,12 @@ brainrot_add_library(brainrot_utils
 
 add_executable(BrainrotAnalyzer main.cpp)
 target_link_libraries(BrainrotAnalyzer PRIVATE
-    brainrot_parser
-    brainrot_nlp
-    brainrot_graph
-    brainrot_structures
-    brainrot_algorithms
     brainrot_analysis
+    brainrot_algorithms
+    brainrot_structures
+    brainrot_graph
+    brainrot_nlp
+    brainrot_parser
     brainrot_utils
 )
 

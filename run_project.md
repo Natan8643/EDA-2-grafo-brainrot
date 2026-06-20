@@ -17,6 +17,17 @@ cmake -S . -B build
 
 esse comando cria a pasta **build/** e joga lá dentro os scripts que o compilador real do seu sistema vai usar para montar o binário.
 
+Também é necessario a instalação do wrapper do spacy pra c++ e ter o python instalado:
+(assumindo que o python está instalado)
+
+```
+python3 -m pip install spacy --break-system-packages
+```
+```
+python3 -m spacy download pt_core_news_sm
+```
+
+
 ## Como usar as Sandboxes (Ambiente de Teste Livre)
 
 Para evitar que todo mundo mexe no `main.cpp` ao mesmo tempo e gere conflitos no Git, cada módulo ganhou um Sandbox isolado dentro da pasta **tests/**.
