@@ -2,6 +2,43 @@
 
 Este documento descreve o ciclo de vida dos dados dentro do sistema, detalhando a entrada e a saída de cada módulo para guiar a implementação correta das classes.
 
+Para rodar o projeto:
+
+Instalar  gerenciador e o python:
+
+``` Bash
+sudo apt install python3-pip python3-dev
+```
+
+Instalar o Wrapper do spacy para cpp e o modelo para pt
+``` Bash
+python3 -m pip install spacy --break-system-packages
+python3 -m spacy download pt_core_news_sm --break-system-packages
+```
+Rodar shell com os exemplos pre-prontos:
+
+``` Bash
+./run_scenario
+```
+
+Caso queira rodar o projeto e testar exemplos à parte coloque as frases no arquivo doc1.txt e então rode o projeto com:
+
+``` Bash
+cmake -S . -B build
+
+cmake --build build --target run_project
+```
+
+---
+## Exemplo de Prints de funcionamento 
+
+
+
+<img src="docs/images/1.png" alt="Visualização do Grafo" width="600">
+
+<img src="docs/images/2.png" alt="Visualização do Grafo" width="600">
+
+<img src="docs/images/3.png" alt="Visualização do Grafo" width="600">
 ---
 
 ## Cenário de Exemplo
