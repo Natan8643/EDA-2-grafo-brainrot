@@ -17,14 +17,22 @@ SpacyProcessor::SpacyProcessor(brainrot::utils::Config config)
 {
 }
 
-std::vector<Token> SpacyProcessor::process(const std::string &rawText) const
+std::vector<Token> SpacyProcessor::process(const std::string &rawText, const std::string &docName) const
 {
 	std::vector<Token> tokens;
+
+	std::ofstream logFile("data/nlp_report.txt", std::ios::app);
+	if (logFile.is_open())
+	{
+		logFile << "======================================================================\n";
+		logFile << "DOCUMENTO: " << (docName.empty() ? "Texto Avulso" : docName) << "\n";
+		logFile << "======================================================================\n";
+	}
 
 #if defined(BRAINROT_HAS_SPACY_CPP) && BRAINROT_HAS_SPACY_CPP
 	try
 	{
-		Spacy::Spacy spacy;
+		static Spacy::Spacy spacy;
 		auto nlp = spacy.load(config.spacyModel);
 		auto doc = nlp.parse(rawText);
 
@@ -32,27 +40,58 @@ std::vector<Token> SpacyProcessor::process(const std::string &rawText) const
 		{
 			const std::string original = spacyToken.text();
 			const std::string lemma = spacyToken.lemma_();
-			const std::string normalized = normalize(lemma.empty() ? original : lemma);
+			std::string normalized = normalize(lemma.empty() ? original : lemma);
+
+			// Se a palavra original ou o lema corresponder/começar com um termo de brainrot,
+			// forçamos o uso do termo canônico definido no vocabulário.
+			for (const auto &vocabWord : brainrotVocabulary)
+			{
+				if (normalized == vocabWord || 
+					normalize(original) == vocabWord ||
+					normalize(original).find(vocabWord) == 0)
+				{
+					normalized = vocabWord;
+					break;
+				}
+			}
 
 			if (normalized.empty() || isPunctuationOnly(normalized))
 			{
+				if (logFile.is_open())
+				{
+					logFile << "[DESCARTADO] \"" << original << "\" -> Motivo: Pontuação ou Vazio\n";
+				}
 				continue;
 			}
 
 			if (stopwords.find(normalized) != stopwords.end())
 			{
+				if (logFile.is_open())
+				{
+					logFile << "[DESCARTADO] \"" << original << "\" -> Lemma: \"" << normalized << "\" | Motivo: Stopword\n";
+				}
 				continue;
 			}
 
 			tokens.push_back(Token{original, normalized});
+			if (logFile.is_open())
+			{
+				logFile << "[ACEITO]     \"" << original << "\" -> Lemma: \"" << normalized << "\" (Enviado para o grafo)\n";
+			}
 		}
 
+		if (logFile.is_open())
+		{
+			logFile << "\n";
+		}
 		return tokens;
 	}
 	catch (...)
 	{
-		// Em caso de erro de runtime do spaCy (modelo ausente, Python indisponível),
-		// o processador continua operando com fallback por split simples.
+		if (logFile.is_open())
+		{
+			logFile << "[AVISO] Falha no spaCy nativo, usando modo Fallback (Split simples)\n";
+		}
 	}
 #endif
 
@@ -62,20 +101,48 @@ std::vector<Token> SpacyProcessor::process(const std::string &rawText) const
 
 	while (iss >> word)
 	{
-		const std::string normalized = normalize(word);
+		std::string normalized = normalize(word);
+
+		// Se a palavra corresponder/começar com um termo de brainrot,
+		// forçamos o uso do termo canônico definido no vocabulário.
+		for (const auto &vocabWord : brainrotVocabulary)
+		{
+			if (normalized == vocabWord || 
+				normalize(word).find(vocabWord) == 0)
+			{
+				normalized = vocabWord;
+				break;
+			}
+		}
 		if (normalized.empty() || isPunctuationOnly(normalized))
 		{
+			if (logFile.is_open())
+			{
+				logFile << "[DESCARTADO] \"" << word << "\" -> Motivo: Pontuação ou Vazio (Fallback)\n";
+			}
 			continue;
 		}
 
 		if (stopwords.find(normalized) != stopwords.end())
 		{
+			if (logFile.is_open())
+			{
+				logFile << "[DESCARTADO] \"" << word << "\" -> Lemma: \"" << normalized << "\" | Motivo: Stopword (Fallback)\n";
+			}
 			continue;
 		}
 
 		tokens.push_back(Token{word, normalized});
+		if (logFile.is_open())
+		{
+			logFile << "[ACEITO]     \"" << word << "\" -> Lemma: \"" << normalized << "\" (Enviado para o grafo) (Fallback)\n";
+		}
 	}
 
+	if (logFile.is_open())
+	{
+		logFile << "\n";
+	}
 	return tokens;
 }
 

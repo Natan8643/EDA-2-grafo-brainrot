@@ -1,0 +1,329 @@
+=== RELATÓRIO DE PROCESSAMENTO NLP E GRAFO ===
+
+======================================================================
+DOCUMENTO: data/corpus/doc1.txt
+======================================================================
+[DESCARTADO] """ -> Motivo: Pontuação ou Vazio
+[DESCARTADO] "Os" -> Lemma: "o" | Motivo: Stopword
+[ACEITO]     "caras" -> Lemma: "cara" (Enviado para o grafo)
+[ACEITO]     "sigma" -> Lemma: "sigma" (Enviado para o grafo)
+[DESCARTADO] "têm" -> Lemma: "ter" | Motivo: Stopword
+[ACEITO]     "aura" -> Lemma: "aura" (Enviado para o grafo)
+[DESCARTADO] "." -> Motivo: Pontuação ou Vazio
+[DESCARTADO] """ -> Motivo: Pontuação ou Vazio
+[DESCARTADO] "
+" -> Motivo: Pontuação ou Vazio
+[DESCARTADO] "esse" -> Lemma: "esse" | Motivo: Stopword
+[ACEITO]     "mano" -> Lemma: "mano" (Enviado para o grafo)
+[DESCARTADO] "tem" -> Lemma: "ter" | Motivo: Stopword
+[DESCARTADO] "muito" -> Lemma: "muito" | Motivo: Stopword
+[ACEITO]     "sigma" -> Lemma: "sigma" (Enviado para o grafo)
+[ACEITO]     "energy" -> Lemma: "energy" (Enviado para o grafo)
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[DESCARTADO] "o" -> Lemma: "o" | Motivo: Stopword
+[ACEITO]     "cara" -> Lemma: "cara" (Enviado para o grafo)
+[ACEITO]     "acordou" -> Lemma: "acordar" (Enviado para o grafo)
+[DESCARTADO] "em" -> Lemma: "em" | Motivo: Stopword
+[ACEITO]     "modo" -> Lemma: "modo" (Enviado para o grafo)
+[ACEITO]     "sigma" -> Lemma: "sigma" (Enviado para o grafo)
+[DESCARTADO] "hoje" -> Lemma: "hoje" | Motivo: Stopword
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[ACEITO]     "sigma" -> Lemma: "sigma" (Enviado para o grafo)
+[ACEITO]     "grindset" -> Lemma: "grindset" (Enviado para o grafo)
+[ACEITO]     "ativado" -> Lemma: "ativar" (Enviado para o grafo)
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[DESCARTADO] "esse" -> Lemma: "esse" | Motivo: Stopword
+[ACEITO]     "mlk" -> Lemma: "mlk" (Enviado para o grafo)
+[ACEITO]     "nasceu" -> Lemma: "nascer" (Enviado para o grafo)
+[DESCARTADO] "com" -> Lemma: "com" | Motivo: Stopword
+[ACEITO]     "rizz" -> Lemma: "rizz" (Enviado para o grafo)
+[ACEITO]     "infinito" -> Lemma: "infinito" (Enviado para o grafo)
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[DESCARTADO] "o" -> Lemma: "o" | Motivo: Stopword
+[ACEITO]     "cara" -> Lemma: "cara" (Enviado para o grafo)
+[DESCARTADO] "tem" -> Lemma: "ter" | Motivo: Stopword
+[DESCARTADO] "mais" -> Lemma: "mais" | Motivo: Stopword
+[ACEITO]     "rizz" -> Lemma: "rizz" (Enviado para o grafo)
+[DESCARTADO] "que" -> Lemma: "que" | Motivo: Stopword
+[DESCARTADO] "todo" -> Lemma: "todo" | Motivo: Stopword
+[ACEITO]     "mundo" -> Lemma: "mundo" (Enviado para o grafo)
+[DESCARTADO] "da" -> Lemma: "de o" | Motivo: Stopword
+[ACEITO]     "sala" -> Lemma: "sala" (Enviado para o grafo)
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[DESCARTADO] "isso" -> Lemma: "isso" | Motivo: Stopword
+[DESCARTADO] "foi" -> Lemma: "ser" | Motivo: Stopword
+[ACEITO]     "puro" -> Lemma: "puro" (Enviado para o grafo)
+[ACEITO]     "ohio" -> Lemma: "ohio" (Enviado para o grafo)
+[ACEITO]     "moment" -> Lemma: "moment" (Enviado para o grafo)
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[ACEITO]     "apenas" -> Lemma: "apenas" (Enviado para o grafo)
+[DESCARTADO] "mais" -> Lemma: "mais" | Motivo: Stopword
+[DESCARTADO] "um" -> Lemma: "um" | Motivo: Stopword
+[ACEITO]     "dia" -> Lemma: "dia" (Enviado para o grafo)
+[ACEITO]     "normal" -> Lemma: "normal" (Enviado para o grafo)
+[DESCARTADO] "em" -> Lemma: "em" | Motivo: Stopword
+[ACEITO]     "ohio" -> Lemma: "ohio" (Enviado para o grafo)
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[DESCARTADO] "esse" -> Lemma: "esse" | Motivo: Stopword
+[ACEITO]     "vídeo" -> Lemma: "vídeo" (Enviado para o grafo)
+[DESCARTADO] "tem" -> Lemma: "ter" | Motivo: Stopword
+[ACEITO]     "aura" -> Lemma: "aura" (Enviado para o grafo)
+[ACEITO]     "demais" -> Lemma: "demais" (Enviado para o grafo)
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[DESCARTADO] "o" -> Lemma: "o" | Motivo: Stopword
+[ACEITO]     "cara" -> Lemma: "cara" (Enviado para o grafo)
+[ACEITO]     "perdeu" -> Lemma: "perder" (Enviado para o grafo)
+[ACEITO]     "500" -> Lemma: "500" (Enviado para o grafo)
+[ACEITO]     "pontos" -> Lemma: "ponto" (Enviado para o grafo)
+[DESCARTADO] "de" -> Lemma: "de" | Motivo: Stopword
+[ACEITO]     "aura" -> Lemma: "aura" (Enviado para o grafo)
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[ACEITO]     "ganhou" -> Lemma: "ganhar" (Enviado para o grafo)
+[ACEITO]     "aura" -> Lemma: "aura" (Enviado para o grafo)
+[ACEITO]     "só" -> Lemma: "só" (Enviado para o grafo)
+[DESCARTADO] "por" -> Lemma: "por" | Motivo: Stopword
+[ACEITO]     "ficar" -> Lemma: "ficar" (Enviado para o grafo)
+[ACEITO]     "quieto" -> Lemma: "quieto" (Enviado para o grafo)
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[DESCARTADO] "esse" -> Lemma: "esse" | Motivo: Stopword
+[ACEITO]     "npc" -> Lemma: "npc" (Enviado para o grafo)
+[ACEITO]     "repetiu" -> Lemma: "repetir" (Enviado para o grafo)
+[DESCARTADO] "a" -> Lemma: "o" | Motivo: Stopword
+[ACEITO]     "mesma" -> Lemma: "mesmo" (Enviado para o grafo)
+[ACEITO]     "frase" -> Lemma: "frase" (Enviado para o grafo)
+[ACEITO]     "três" -> Lemma: "três" (Enviado para o grafo)
+[ACEITO]     "vezes" -> Lemma: "vez" (Enviado para o grafo)
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[ACEITO]     "comportamento" -> Lemma: "comportamento" (Enviado para o grafo)
+[ACEITO]     "npc" -> Lemma: "npc" (Enviado para o grafo)
+[ACEITO]     "detectado" -> Lemma: "detectar" (Enviado para o grafo)
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[DESCARTADO] "esse" -> Lemma: "esse" | Motivo: Stopword
+[ACEITO]     "mano" -> Lemma: "mano" (Enviado para o grafo)
+[DESCARTADO] "é" -> Lemma: "ser" | Motivo: Stopword
+[ACEITO]     "npc" -> Lemma: "npc" (Enviado para o grafo)
+[ACEITO]     "demais" -> Lemma: "demais" (Enviado para o grafo)
+
+======================================================================
+DOCUMENTO: data/corpus/doc2.txt
+======================================================================
+[DESCARTADO] "o" -> Lemma: "o" | Motivo: Stopword
+[ACEITO]     "cara" -> Lemma: "cara" (Enviado para o grafo)
+[ACEITO]     "levou" -> Lemma: "levar" (Enviado para o grafo)
+[ACEITO]     "fanum" -> Lemma: "fanum" (Enviado para o grafo)
+[ACEITO]     "tax" -> Lemma: "tax" (Enviado para o grafo)
+[DESCARTADO] "no" -> Lemma: "em o" | Motivo: Stopword
+[ACEITO]     "lanche" -> Lemma: "lanche" (Enviado para o grafo)
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[ACEITO]     "roubou" -> Lemma: "roubar" (Enviado para o grafo)
+[DESCARTADO] "uma" -> Lemma: "um" | Motivo: Stopword
+[ACEITO]     "batata" -> Lemma: "batata" (Enviado para o grafo)
+[DESCARTADO] "e" -> Lemma: "e" | Motivo: Stopword
+[ACEITO]     "chamou" -> Lemma: "chamar" (Enviado para o grafo)
+[DESCARTADO] "de" -> Lemma: "de" | Motivo: Stopword
+[ACEITO]     "fanum" -> Lemma: "fanum" (Enviado para o grafo)
+[ACEITO]     "tax" -> Lemma: "tax" (Enviado para o grafo)
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[DESCARTADO] "esse" -> Lemma: "esse" | Motivo: Stopword
+[DESCARTADO] "foi" -> Lemma: "ser" | Motivo: Stopword
+[DESCARTADO] "o" -> Lemma: "o" | Motivo: Stopword
+[ACEITO]     "maior" -> Lemma: "grande" (Enviado para o grafo)
+[ACEITO]     "fanum" -> Lemma: "fanum" (Enviado para o grafo)
+[ACEITO]     "tax" -> Lemma: "tax" (Enviado para o grafo)
+[DESCARTADO] "da" -> Lemma: "de o" | Motivo: Stopword
+[ACEITO]     "história" -> Lemma: "história" (Enviado para o grafo)
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[DESCARTADO] "o" -> Lemma: "o" | Motivo: Stopword
+[ACEITO]     "cara" -> Lemma: "cara" (Enviado para o grafo)
+[DESCARTADO] "está" -> Lemma: "estar" | Motivo: Stopword
+[ACEITO]     "mewing" -> Lemma: "mewing" (Enviado para o grafo)
+[DESCARTADO] "desde" -> Lemma: "desde" | Motivo: Stopword
+[DESCARTADO] "o" -> Lemma: "o" | Motivo: Stopword
+[ACEITO]     "nascimento" -> Lemma: "nascimento" (Enviado para o grafo)
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[ACEITO]     "mewing" -> Lemma: "mewing" (Enviado para o grafo)
+[ACEITO]     "level" -> Lemma: "level" (Enviado para o grafo)
+[ACEITO]     "máximo" -> Lemma: "grande" (Enviado para o grafo)
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[ACEITO]     "jawline" -> Lemma: "jawline" (Enviado para o grafo)
+[ACEITO]     "construída" -> Lemma: "construir" (Enviado para o grafo)
+[DESCARTADO] "com" -> Lemma: "com" | Motivo: Stopword
+[ACEITO]     "mewing" -> Lemma: "mewing" (Enviado para o grafo)
+[ACEITO]     "profissional" -> Lemma: "profissional" (Enviado para o grafo)
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[DESCARTADO] "esse" -> Lemma: "esse" | Motivo: Stopword
+[ACEITO]     "cara" -> Lemma: "cara" (Enviado para o grafo)
+[DESCARTADO] "é" -> Lemma: "ser" | Motivo: Stopword
+[ACEITO]     "puro" -> Lemma: "puro" (Enviado para o grafo)
+[ACEITO]     "mog" -> Lemma: "mog" (Enviado para o grafo)
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[ACEITO]     "acabou" -> Lemma: "acabar" (Enviado para o grafo)
+[DESCARTADO] "de" -> Lemma: "de" | Motivo: Stopword
+[ACEITO]     "moggar" -> Lemma: "mog" (Enviado para o grafo)
+[ACEITO]     "metade" -> Lemma: "metade" (Enviado para o grafo)
+[DESCARTADO] "da" -> Lemma: "de o" | Motivo: Stopword
+[ACEITO]     "turma" -> Lemma: "turma" (Enviado para o grafo)
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[ACEITO]     "mog" -> Lemma: "mog" (Enviado para o grafo)
+[ACEITO]     "absoluto" -> Lemma: "absoluto" (Enviado para o grafo)
+[DESCARTADO] "sem" -> Lemma: "sem" | Motivo: Stopword
+[ACEITO]     "esforço" -> Lemma: "esforço" (Enviado para o grafo)
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[ACEITO]     "skibidi" -> Lemma: "skibidi" (Enviado para o grafo)
+[ACEITO]     "sigma" -> Lemma: "sigma" (Enviado para o grafo)
+[ACEITO]     "detected" -> Lemma: "detected" (Enviado para o grafo)
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[DESCARTADO] "isso" -> Lemma: "isso" | Motivo: Stopword
+[DESCARTADO] "está" -> Lemma: "estar" | Motivo: Stopword
+[DESCARTADO] "muito" -> Lemma: "muito" | Motivo: Stopword
+[ACEITO]     "skibidi" -> Lemma: "skibidi" (Enviado para o grafo)
+[DESCARTADO] "hoje" -> Lemma: "hoje" | Motivo: Stopword
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[ACEITO]     "skibidi" -> Lemma: "skibidi" (Enviado para o grafo)
+[ACEITO]     "ohio" -> Lemma: "ohio" (Enviado para o grafo)
+[ACEITO]     "energy" -> Lemma: "energy" (Enviado para o grafo)
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[DESCARTADO] "o" -> Lemma: "o" | Motivo: Stopword
+[ACEITO]     "cara" -> Lemma: "cara" (Enviado para o grafo)
+[ACEITO]     "entrou" -> Lemma: "entrar" (Enviado para o grafo)
+[DESCARTADO] "na" -> Lemma: "em o" | Motivo: Stopword
+[ACEITO]     "sala" -> Lemma: "sala" (Enviado para o grafo)
+[DESCARTADO] "com" -> Lemma: "com" | Motivo: Stopword
+[ACEITO]     "aura" -> Lemma: "aura" (Enviado para o grafo)
+[DESCARTADO] "de" -> Lemma: "de" | Motivo: Stopword
+[ACEITO]     "final" -> Lemma: "final" (Enviado para o grafo)
+[ACEITO]     "boss" -> Lemma: "boss" (Enviado para o grafo)
+[DESCARTADO] "
+" -> Motivo: Pontuação ou Vazio
+
+======================================================================
+DOCUMENTO: data/corpus/WArNING.txt
+======================================================================
+[ACEITO]     "energia" -> Lemma: "energia" (Enviado para o grafo)
+[DESCARTADO] "de" -> Lemma: "de" | Motivo: Stopword
+[ACEITO]     "personagem" -> Lemma: "personagem" (Enviado para o grafo)
+[ACEITO]     "principal" -> Lemma: "principal" (Enviado para o grafo)
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[ACEITO]     "main" -> Lemma: "main" (Enviado para o grafo)
+[ACEITO]     "character" -> Lemma: "character" (Enviado para o grafo)
+[ACEITO]     "energy" -> Lemma: "energy" (Enviado para o grafo)
+[ACEITO]     "total" -> Lemma: "total" (Enviado para o grafo)
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[ACEITO]     "side" -> Lemma: "side" (Enviado para o grafo)
+[ACEITO]     "character" -> Lemma: "character" (Enviado para o grafo)
+[ACEITO]     "energy" -> Lemma: "energy" (Enviado para o grafo)
+[ACEITO]     "detectada" -> Lemma: "detectar" (Enviado para o grafo)
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[DESCARTADO] "esse" -> Lemma: "esse" | Motivo: Stopword
+[ACEITO]     "comentário" -> Lemma: "comentário" (Enviado para o grafo)
+[DESCARTADO] "tem" -> Lemma: "ter" | Motivo: Stopword
+[ACEITO]     "sigma" -> Lemma: "sigma" (Enviado para o grafo)
+[ACEITO]     "vibes" -> Lemma: "vibe" (Enviado para o grafo)
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[DESCARTADO] "o" -> Lemma: "o" | Motivo: Stopword
+[ACEITO]     "cara" -> Lemma: "cara" (Enviado para o grafo)
+[ACEITO]     "nasceu" -> Lemma: "nascer" (Enviado para o grafo)
+[DESCARTADO] "em" -> Lemma: "em" | Motivo: Stopword
+[ACEITO]     "ohio" -> Lemma: "ohio" (Enviado para o grafo)
+[ACEITO]     "certeza" -> Lemma: "certeza" (Enviado para o grafo)
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[DESCARTADO] "isso" -> Lemma: "isso" | Motivo: Stopword
+[DESCARTADO] "é" -> Lemma: "ser" | Motivo: Stopword
+[ACEITO]     "comportamento" -> Lemma: "comportamento" (Enviado para o grafo)
+[ACEITO]     "padrão" -> Lemma: "padrão" (Enviado para o grafo)
+[DESCARTADO] "de" -> Lemma: "de" | Motivo: Stopword
+[ACEITO]     "ohio" -> Lemma: "ohio" (Enviado para o grafo)
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[DESCARTADO] "esse" -> Lemma: "esse" | Motivo: Stopword
+[ACEITO]     "cara" -> Lemma: "cara" (Enviado para o grafo)
+[DESCARTADO] "tem" -> Lemma: "ter" | Motivo: Stopword
+[ACEITO]     "rizz" -> Lemma: "rizz" (Enviado para o grafo)
+[DESCARTADO] "mas" -> Lemma: "mas" | Motivo: Stopword
+[ACEITO]     "perdeu" -> Lemma: "perder" (Enviado para o grafo)
+[DESCARTADO] "na" -> Lemma: "em o" | Motivo: Stopword
+[ACEITO]     "aura" -> Lemma: "aura" (Enviado para o grafo)
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[ACEITO]     "mog" -> Lemma: "mog" (Enviado para o grafo)
+[ACEITO]     "maior" -> Lemma: "grande" (Enviado para o grafo)
+[DESCARTADO] "que" -> Lemma: "que" | Motivo: Stopword
+[DESCARTADO] "o" -> Lemma: "o" | Motivo: Stopword
+[ACEITO]     "rizz" -> Lemma: "rizz" (Enviado para o grafo)
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[ACEITO]     "aura" -> Lemma: "aura" (Enviado para o grafo)
+[ACEITO]     "maior" -> Lemma: "grande" (Enviado para o grafo)
+[DESCARTADO] "que" -> Lemma: "que" | Motivo: Stopword
+[DESCARTADO] "o" -> Lemma: "o" | Motivo: Stopword
+[ACEITO]     "sigma" -> Lemma: "sigma" (Enviado para o grafo)
+[DESCARTADO] "
+
+" -> Motivo: Pontuação ou Vazio
+[DESCARTADO] "esse" -> Lemma: "esse" | Motivo: Stopword
+[ACEITO]     "npc" -> Lemma: "npc" (Enviado para o grafo)
+[ACEITO]     "tentou" -> Lemma: "tentar" (Enviado para o grafo)
+[ACEITO]     "usar" -> Lemma: "usar" (Enviado para o grafo)
+[ACEITO]     "rizz" -> Lemma: "rizz" (Enviado para o grafo)
+

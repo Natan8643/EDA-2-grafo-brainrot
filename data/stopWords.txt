@@ -175,3 +175,5 @@ nao
 não
 nem
 pq
+de o
+em o
