@@ -23,7 +23,7 @@ public:
 	explicit SpacyProcessor(brainrot::utils::Config config = {});
 
 	// Processa um documento bruto e retorna os tokens prontos para o grafo.
-	std::vector<Token> process(const std::string &rawText, const std::string &docName = "") const;
+	std::vector<Token> process(const std::string &rawText) const;
 
 	bool isBrainrotLemma(const std::string &lemma) const;
 };

@@ -20,13 +20,6 @@ void printa(std::vector<std::string> text) {
 }
 
 int main() {
-  // Limpa/sobrescreve o relatório para iniciar do zero
-  std::ofstream cleanReport("data/nlp_report.txt");
-  if (cleanReport.is_open()) {
-    cleanReport << "=== RELATÓRIO DE PROCESSAMENTO NLP E GRAFO ===\n\n";
-  }
-  cleanReport.close();
-
   CorpusManager maneger(CORPUSPATH);
   FileLoader loader;
 
@@ -60,7 +53,7 @@ int main() {
           line.find_first_not_of(" \t\r\n") == std::string::npos) {
         continue;
       }
-      std::vector<Token> tokens = nlp.process(line, docs.at(i));
+      std::vector<Token> tokens = nlp.process(line);
       builder.addDocument(tokens);
     }
   }

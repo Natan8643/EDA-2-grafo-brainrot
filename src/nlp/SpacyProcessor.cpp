@@ -21,19 +21,8 @@ SpacyProcessor::SpacyProcessor(brainrot::utils::Config config)
       stopwords(loadWordSet(this->config.stopwordsFile)),
       brainrotVocabulary(loadWordSet(this->config.brainrotVocabularyFile)) {}
 
-std::vector<Token> SpacyProcessor::process(const std::string &rawText,
-                                           const std::string &docName) const {
+std::vector<Token> SpacyProcessor::process(const std::string &rawText) const {
   std::vector<Token> tokens;
-
-  std::ofstream logFile("data/nlp_report.txt", std::ios::app);
-  if (logFile.is_open()) {
-    logFile << "==============================================================="
-               "=======\n";
-    logFile << "DOCUMENTO: " << (docName.empty() ? "Texto Avulso" : docName)
-            << "\n";
-    logFile << "==============================================================="
-               "=======\n";
-  }
 
 #if defined(BRAINROT_HAS_SPACY_CPP) && BRAINROT_HAS_SPACY_CPP
   try {
@@ -57,37 +46,19 @@ std::vector<Token> SpacyProcessor::process(const std::string &rawText,
       }
 
       if (normalized.empty() || isPunctuationOnly(normalized)) {
-        if (logFile.is_open()) {
-          logFile << "[DESCARTADO] \"" << original
-                  << "\" -> Motivo: Pontuação ou Vazio\n";
-        }
         continue;
       }
 
       if (stopwords.find(normalized) != stopwords.end()) {
-        if (logFile.is_open()) {
-          logFile << "[DESCARTADO] \"" << original << "\" -> Lemma: \""
-                  << normalized << "\" | Motivo: Stopword\n";
-        }
         continue;
       }
 
       tokens.push_back(Token{original, normalized});
-      if (logFile.is_open()) {
-        logFile << "[ACEITO]     \"" << original << "\" -> Lemma: \""
-                << normalized << "\" (Enviado para o grafo)\n";
-      }
     }
 
-    if (logFile.is_open()) {
-      logFile << "\n";
-    }
     return tokens;
   } catch (...) {
-    if (logFile.is_open()) {
-      logFile << "[AVISO] Falha no spaCy nativo, usando modo Fallback (Split "
-                 "simples)\n";
-    }
+    // Falha no spaCy nativo, usando modo Fallback
   }
 #endif
 
@@ -107,31 +78,16 @@ std::vector<Token> SpacyProcessor::process(const std::string &rawText,
       }
     }
     if (normalized.empty() || isPunctuationOnly(normalized)) {
-      if (logFile.is_open()) {
-        logFile << "[DESCARTADO] \"" << word
-                << "\" -> Motivo: Pontuação ou Vazio (Fallback)\n";
-      }
       continue;
     }
 
     if (stopwords.find(normalized) != stopwords.end()) {
-      if (logFile.is_open()) {
-        logFile << "[DESCARTADO] \"" << word << "\" -> Lemma: \"" << normalized
-                << "\" | Motivo: Stopword (Fallback)\n";
-      }
       continue;
     }
 
     tokens.push_back(Token{word, normalized});
-    if (logFile.is_open()) {
-      logFile << "[ACEITO]     \"" << word << "\" -> Lemma: \"" << normalized
-              << "\" (Enviado para o grafo) (Fallback)\n";
-    }
   }
 
-  if (logFile.is_open()) {
-    logFile << "\n";
-  }
   return tokens;
 }
 
