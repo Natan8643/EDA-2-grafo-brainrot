@@ -156,7 +156,7 @@ brainrot_add_library(brainrot_algorithms
     src/algorithms/Dijkstra.cpp
 )
 
-target_link_libraries(brainrot_algorithms PUBLIC brainrot_graph)
+target_link_libraries(brainrot_algorithms PUBLIC brainrot_graph brainrot_structures)
 
 brainrot_add_library(brainrot_analysis
     src/analysis/ReportGenerator.cpp
