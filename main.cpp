@@ -60,6 +60,15 @@ int main() {
 
   Graph g = builder.build();
 
+  ReportGenerator reporter;
+  
+  std::cout << "\n=============================================" << std::endl;
+  std::cout << "      ANALISADOR DE COOCORRÊNCIA BRAINROT     " << std::endl;
+  std::cout << "=============================================" << std::endl;
+
+  reporter.printStats(g);
+  reporter.printTopTerms(g, 10);
+
   // Solicita termos interativamente para remover o hardcode do Dijkstra
   std::string startWord, endWord;
   std::cout << "\n>>> Configuração do Dijkstra <<<" << std::endl;
@@ -68,9 +77,20 @@ int main() {
   std::cout << "Digite o termo de destino (ex: rizz): ";
   std::cin >> endWord;
 
-  // Orquestra a geração do relatório através do ReportGenerator
-  ReportGenerator reporter;
-  reporter.generateSummary(g, startWord, endWord);
+  // Solicita termo interativamente para o BFS
+  std::string bfsRoot;
+  std::cout << "\n>>> Configuração do BFS <<<" << std::endl;
+  std::cout << "Digite o termo de origem para o BFS (ex: sigma): ";
+  std::cin >> bfsRoot;
+
+  reporter.printBFSDistances(g, bfsRoot);
+  reporter.printShortestPath(g, startWord, endWord);
+
+  std::cout << "\n[5] EXPORTAÇÃO DOS DADOS" << std::endl;
+  reporter.exportGraphToJson(g, "data/graph.json");
+  std::cout << "  - Arquivo 'data/graph.json' exportado com sucesso." << std::endl;
+  std::cout << "  - Digite: python3 data/visualize.py para abrir o grafo interativo no navegador!" << std::endl;
+  std::cout << "=============================================\n" << std::endl;
 
   return 0;
 }

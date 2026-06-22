@@ -13,6 +13,7 @@ sudo apt install python3-pip python3-dev
 Instalar o Wrapper do spacy para cpp e o modelo para pt
 ``` Bash
 python3 -m pip install spacy --break-system-packages
+
 python3 -m spacy download pt_core_news_sm --break-system-packages
 ```
 Rodar shell com os exemplos pre-prontos:
